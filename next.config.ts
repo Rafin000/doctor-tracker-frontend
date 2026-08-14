@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // Emit a minimal standalone server for a small Docker runtime image.
+  output: 'standalone',
+}
 
-export default nextConfig;
+export default nextConfig
