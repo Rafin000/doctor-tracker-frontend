@@ -10,7 +10,9 @@ export const tokenStore = {
     Cookies.set(TOKEN_KEY, token, {
       expires: 1, // days; mirrors JWT_EXPIRES_IN=1d
       sameSite: 'lax',
-      secure: process.env.NODE_ENV === 'production',
+      // Note: no `secure` flag — the app is served over plain HTTP (nip.io),
+      // and browsers drop Secure cookies on insecure origins. Behind HTTPS,
+      // set secure:true.
     }),
   clear: () => Cookies.remove(TOKEN_KEY),
 }
