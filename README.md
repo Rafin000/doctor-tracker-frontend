@@ -61,14 +61,14 @@ Password: Admin@1234
 ## Setup guide
 
 ### Prerequisites
-- Node.js 18+ and npm
+- Node.js 18+ and Yarn
 - The [Doctor Tracker backend](#) running and reachable (locally or deployed)
 
 ### 1. Install
 ```bash
 git clone https://github.com/Rafin000/doctor-tracker-frontend.git
 cd doctor-tracker-frontend
-npm install
+yarn install
 ```
 
 ### 2. Configure environment
@@ -81,17 +81,17 @@ cp .env.example .env.local
 # Base URL of the Doctor Tracker API (NestJS backend). Include the /api prefix.
 NEXT_PUBLIC_API_BASE_URL=http://localhost:4000/api
 ```
-> `NEXT_PUBLIC_*` variables are inlined at **build time**, so set this before `npm run build` (and in your Vercel project's Environment Variables for production).
+> `NEXT_PUBLIC_*` variables are inlined at **build time**, so set this before `yarn build` (and in your Vercel project's Environment Variables for production).
 
 ### 3. Run
 ```bash
-npm run dev      # http://localhost:3000
+yarn dev      # http://localhost:3000
 ```
 Sign in with the demo credentials above.
 
 ### 4. Production build
 ```bash
-npm run build && npm run start
+yarn build && yarn start
 ```
 
 ---
@@ -169,8 +169,8 @@ This keeps components declarative (they call `useDoctors()`), makes the API surf
 
 ## Available scripts
 ```bash
-npm run dev      # start dev server
-npm run build    # production build (type-checked + linted)
-npm run start    # serve the production build
-npm run lint     # eslint
+yarn dev      # start dev server
+yarn build    # production build (type-checked + linted)
+yarn start    # serve the production build
+yarn lint     # eslint
 ```

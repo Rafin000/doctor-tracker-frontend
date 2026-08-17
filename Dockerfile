@@ -3,8 +3,8 @@
 # ---------- deps ----------
 FROM node:20-alpine AS deps
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
 # ---------- build ----------
 FROM node:20-alpine AS build
@@ -15,7 +15,7 @@ COPY . .
 ARG NEXT_PUBLIC_API_BASE_URL
 ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN npm run build
+RUN yarn build
 
 # ---------- runtime ----------
 FROM node:20-alpine AS runtime
