@@ -1,6 +1,6 @@
 # Doctor Tracker — Frontend
 
-A secure admin portal to manage doctors, their patients, and see meaningful analytics at a glance. This is the **frontend** (Next.js). It talks to a separate [Doctor Tracker backend](#) over a REST API.
+A secure admin portal to manage doctors, their patients, and see meaningful analytics at a glance. This is the **frontend** (Next.js). It talks to a separate [Doctor Tracker backend](https://github.com/Rafin000/doctor-tracker-backend) over a REST API.
 
 > **Elevator pitch:** Doctor Tracker gives a clinic administrator one place to register doctors, manage each doctor's patients, and understand the practice through live charts — with authentication, fast search/filter/pagination, and a clean, responsive UI.
 
@@ -10,8 +10,14 @@ A secure admin portal to manage doctors, their patients, and see meaningful anal
 
 | | URL |
 |---|---|
-| Frontend (this app) | `https://<your-vercel-app>.vercel.app` |
-| Backend API | `https://<your-render-app>.onrender.com/api` |
+| **Live app** | http://doctortracker.16.171.174.104.nip.io |
+| Backend API | http://doctortracker.16.171.174.104.nip.io/api |
+| API docs (Swagger) | http://doctortracker.16.171.174.104.nip.io/api/docs |
+| Backend repo | https://github.com/Rafin000/doctor-tracker-backend |
+
+> Deployed with Docker on a Linux VPS behind an nginx reverse proxy. Served over
+> plain HTTP (no TLS on the IP-based host), so browsers may show a "not secure"
+> note — that is only the missing certificate; the app works normally.
 
 **Demo credentials**
 
